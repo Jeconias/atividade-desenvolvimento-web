@@ -1,0 +1,66 @@
+@(extrato : Extrato)
+
+@main("Extrato") {
+    <div class="container">
+      
+      <div class="header">
+
+        <div class="headerTopBar">
+          <div>
+            <img src="@routes.Assets.versioned("images/icon_bb_256x256.png")"" alt="Ícone do Banco do Brasil">
+          </div>
+          <div>
+            <h1>Autoatendimento</h1>
+          </div>
+          <div>
+            <button>Sair</button>
+          </div>
+        </div>
+
+        <div class="headerBottomBar">
+          <div>
+            <button>Voltar</button>
+          </div>
+          <div>
+            <h2>Extrato de Conta Corrente</h2>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="containerTable">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Dia</th>
+              <th>Histórico</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td>Saldo Anterior</td>
+              <td class="blueColor">@extrato.getSaldoAnteriorFormatoBr()</td>
+            </tr>
+            @for(it <- extrato.getItens()){
+              <tr>
+                  <td>@it.getData()</td>
+                  <td>@it.getHistorico()</td>
+                  @if(it.getTipo() == "debito"){
+                    <td class="redColor">@it.getValorFormatBr()</td>
+                  }else{
+                    <td class="blueColor">@it.getValorFormatBr()</td>
+                  }
+              </tr>
+            }
+            <tr>
+                <td></td>
+                <td class="saldoFormat">Saldo</td>
+                <td class="blueColor">@extrato.getSaldoAtualFormatoBr()</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+}
