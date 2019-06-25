@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/developer/atividade-desenvolvimento-web/lista_02/conf/routes
-// @DATE:Tue Jun 25 18:05:47 BRT 2019
+// @SOURCE:/home/developer/atividade-desenvolvimento-web/lista_02/Q1/conf/routes
+// @DATE:Tue Jun 25 20:26:11 BRT 2019
 
 import play.api.mvc.Call
 
