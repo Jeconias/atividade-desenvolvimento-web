@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/developer/atividade-desenvolvimento-web/lista_02/Q1/conf/routes
-// @DATE:Tue Jun 25 20:26:11 BRT 2019
+// @SOURCE:/home/developer/atividade-desenvolvimento-web/lista_02/conf/routes
+// @DATE:Wed Jun 26 02:40:45 BRT 2019
 
 package router
 
@@ -40,7 +40,7 @@ class Routes(
   }
 
   def documentation = List(
-    ("""GET""", this.prefix, """controllers.HomeController.index"""),
+    ("""GET""", this.prefix, """controllers.HomeController.index(genero:String ?= "", artista:String ?= "")"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -54,12 +54,12 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix)))
   )
   private[this] lazy val controllers_HomeController_index0_invoker = createInvoker(
-    HomeController_1.index,
+    HomeController_1.index(fakeValue[String], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
       "index",
-      Nil,
+      Seq(classOf[String], classOf[String]),
       "GET",
       this.prefix + """""",
       """ An example controller showing a sample home page""",
@@ -90,8 +90,8 @@ class Routes(
   
     // @LINE:6
     case controllers_HomeController_index0_route(params@_) =>
-      call { 
-        controllers_HomeController_index0_invoker.call(HomeController_1.index)
+      call(params.fromQuery[String]("genero", Some("")), params.fromQuery[String]("artista", Some(""))) { (genero, artista) =>
+        controllers_HomeController_index0_invoker.call(HomeController_1.index(genero, artista))
       }
   
     // @LINE:9

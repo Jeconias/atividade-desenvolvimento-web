@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/developer/atividade-desenvolvimento-web/lista_02/Q1/conf/routes
-// @DATE:Tue Jun 25 20:26:11 BRT 2019
+// @SOURCE:/home/developer/atividade-desenvolvimento-web/lista_02/conf/routes
+// @DATE:Wed Jun 26 02:40:45 BRT 2019
 
 
 package router {

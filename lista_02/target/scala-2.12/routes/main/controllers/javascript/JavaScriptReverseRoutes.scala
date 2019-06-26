@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/developer/atividade-desenvolvimento-web/lista_02/Q1/conf/routes
-// @DATE:Tue Jun 25 20:26:11 BRT 2019
+// @SOURCE:/home/developer/atividade-desenvolvimento-web/lista_02/conf/routes
+// @DATE:Wed Jun 26 02:40:45 BRT 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -23,8 +23,8 @@ package controllers.javascript {
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.index",
       """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + """"})
+        function(genero0,artista1) {
+          return _wA({method:"GET", url:"""" + _prefix + """" + _qS([(genero0 == null ? null : (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("genero", genero0)), (artista1 == null ? null : (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("artista", artista1))])})
         }
       """
     )

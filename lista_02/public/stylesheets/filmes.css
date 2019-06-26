@@ -1,0 +1,49 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.containerFilmes {
+    width: 100%;
+    margin: auto 0;
+    padding: 10px 15px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    box-sizing: border-box;
+}
+
+.selectGenero, .selectArtista {
+    padding: 10px 0;
+}
+
+.selectGenero select, .selectArtista select {
+    width: 35%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.selectArtista {
+    margin-top: 40px;
+}
+
+.tableGenero {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableGenero th {
+    text-align: left;
+    padding: 10px;
+    background-color: #00DF95;
+}
+
+.tableGenero td {
+    padding: 5px 10px;
+}
+
+.tableGenero > tbody tr:nth-child(odd){
+    background-color: #E1FCEE;
+}

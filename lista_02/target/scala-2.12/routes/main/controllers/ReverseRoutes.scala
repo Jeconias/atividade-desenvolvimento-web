@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/developer/atividade-desenvolvimento-web/lista_02/Q1/conf/routes
-// @DATE:Tue Jun 25 20:26:11 BRT 2019
+// @SOURCE:/home/developer/atividade-desenvolvimento-web/lista_02/conf/routes
+// @DATE:Wed Jun 26 02:40:45 BRT 2019
 
 import play.api.mvc.Call
 
@@ -19,9 +19,9 @@ package controllers {
 
   
     // @LINE:6
-    def index(): Call = {
+    def index(genero:String = "", artista:String = ""): Call = {
       
-      Call("GET", _prefix)
+      Call("GET", _prefix + play.core.routing.queryString(List(if(genero == "") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("genero", genero)), if(artista == "") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("artista", artista)))))
     }
   
   }

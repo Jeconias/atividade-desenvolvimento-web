@@ -41,14 +41,16 @@ Seq[Any](format.raw/*8.1*/("""
     <head>
         """),format.raw/*12.62*/("""
         """),format.raw/*13.9*/("""<title>"""),_display_(/*13.17*/title),format.raw/*13.22*/("""</title>
-        <link rel="stylesheet" media="screen" href=""""),_display_(/*14.54*/routes/*14.60*/.Assets.versioned("stylesheets/main.css")),format.raw/*14.101*/("""">
-        <link rel="shortcut icon" type="image/png" href=""""),_display_(/*15.59*/routes/*15.65*/.Assets.versioned("images/favicon.png")),format.raw/*15.104*/("""">
+        <link rel="stylesheet" media="screen" href=""""),_display_(/*14.54*/routes/*14.60*/.Assets.versioned("stylesheets/generico.css")),format.raw/*14.105*/("""">
+        <link rel="stylesheet" media="screen" href=""""),_display_(/*15.54*/routes/*15.60*/.Assets.versioned("stylesheets/extrato.css")),format.raw/*15.104*/("""">
+        <link rel="stylesheet" media="screen" href=""""),_display_(/*16.54*/routes/*16.60*/.Assets.versioned("stylesheets/filmes.css")),format.raw/*16.103*/("""">
+        <link rel="shortcut icon" type="image/png" href=""""),_display_(/*17.59*/routes/*17.65*/.Assets.versioned("images/favicon.png")),format.raw/*17.104*/("""">
     </head>
     <body>
-        """),format.raw/*19.32*/("""
-        """),_display_(/*20.10*/content),format.raw/*20.17*/("""
+        """),format.raw/*21.32*/("""
+        """),_display_(/*22.10*/content),format.raw/*22.17*/("""
 
-        """),format.raw/*22.9*/("""<script src=""""),_display_(/*22.23*/routes/*22.29*/.Assets.versioned("javascripts/main.js")),format.raw/*22.69*/("""" type="text/javascript"></script>
+        """),format.raw/*24.9*/("""<script src=""""),_display_(/*24.23*/routes/*24.29*/.Assets.versioned("javascripts/main.js")),format.raw/*24.69*/("""" type="text/javascript"></script>
     </body>
 </html>
 """))
@@ -67,11 +69,11 @@ Seq[Any](format.raw/*8.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Tue Jun 25 20:26:12 BRT 2019
-                  SOURCE: /home/developer/atividade-desenvolvimento-web/lista_02/Q1/app/views/main.scala.html
-                  HASH: 863271db3bc90c425db2fb95e8fb0ff62c83f9b4
-                  MATRIX: 1206->260|1330->291|1357->292|1437->397|1473->406|1508->414|1534->419|1623->481|1638->487|1701->528|1789->589|1804->595|1865->634|1927->758|1964->768|1992->775|2029->785|2070->799|2085->805|2146->845
-                  LINES: 33->7|38->8|39->9|42->12|43->13|43->13|43->13|44->14|44->14|44->14|45->15|45->15|45->15|48->19|49->20|49->20|51->22|51->22|51->22|51->22
+                  DATE: Wed Jun 26 01:08:48 BRT 2019
+                  SOURCE: /home/developer/atividade-desenvolvimento-web/lista_02/app/views/main.scala.html
+                  HASH: 33d85c4579fc8fedc3efae1e10221eae8b3d6e0d
+                  MATRIX: 1206->260|1330->291|1357->292|1437->397|1473->406|1508->414|1534->419|1623->481|1638->487|1705->532|1788->588|1803->594|1869->638|1952->694|1967->700|2032->743|2120->804|2135->810|2196->849|2258->973|2295->983|2323->990|2360->1000|2401->1014|2416->1020|2477->1060
+                  LINES: 33->7|38->8|39->9|42->12|43->13|43->13|43->13|44->14|44->14|44->14|45->15|45->15|45->15|46->16|46->16|46->16|47->17|47->17|47->17|50->21|51->22|51->22|53->24|53->24|53->24|53->24
                   -- GENERATED --
               */
           

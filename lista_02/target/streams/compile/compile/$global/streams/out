@@ -1,16 +1,7 @@
-[0m[[0m[31merror[0m] [0m[0m/home/developer/atividade-desenvolvimento-web/lista_02/app/views/index.scala.html:46:40: not found: value itens[0m
-[0m[[0m[31merror[0m] [0m[0m            @for(extrato.getItens() <- itens){[0m
-[0m[[0m[31merror[0m] [0m[0m                                       ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/developer/atividade-desenvolvimento-web/lista_02/app/views/index.scala.html:46:26: method getItens is not a case class, nor does it have an unapply/unapplySeq member[0m
-[0m[[0m[31merror[0m] [0m[0m            @for(extrato.getItens() <- itens){[0m
-[0m[[0m[31merror[0m] [0m[0m                         ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/developer/atividade-desenvolvimento-web/lista_02/app/views/index.scala.html:48:24: not found: value it[0m
-[0m[[0m[31merror[0m] [0m[0m                  <td>@it.getData()</td>[0m
-[0m[[0m[31merror[0m] [0m[0m                       ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/developer/atividade-desenvolvimento-web/lista_02/app/views/index.scala.html:49:24: not found: value it[0m
-[0m[[0m[31merror[0m] [0m[0m                  <td>@it.getHistorico()</td>[0m
-[0m[[0m[31merror[0m] [0m[0m                       ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/developer/atividade-desenvolvimento-web/lista_02/app/views/index.scala.html:50:24: not found: value it[0m
-[0m[[0m[31merror[0m] [0m[0m                  <td>@it.getValor()</td>[0m
-[0m[[0m[31merror[0m] [0m[0m                       ^[0m
-[0m[[0m[31merror[0m] [0m[0m5 errors found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/developer/atividade-desenvolvimento-web/lista_02/app/controllers/HomeController.java:24:47: identifier expected but `)' found.[0m
+[0m[[0m[31merror[0m] [0m[0m    public Result index(String genero, artista) {[0m
+[0m[[0m[31merror[0m] [0m[0m                                              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/developer/atividade-desenvolvimento-web/lista_02/app/controllers/HomeController.java:160:1: `)' expected but `}' found.[0m
+[0m[[0m[31merror[0m] [0m[0m}[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

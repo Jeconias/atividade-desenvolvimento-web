@@ -1,66 +1,128 @@
-@(extrato : Extrato)
+@(extrato : models.extrato.Extrato, fshow : List[models.filme.Filme], artistas : List[models.filme.Artista], fshowA : List[models.filme.Filme])
 
-@main("Extrato") {
-    <div class="container">
-      
-      <div class="header">
+@main("Extrato e lista de Filmes") {
+<div class="container">
 
-        <div class="headerTopBar">
-          <div>
-            <img src="@routes.Assets.versioned("images/icon_bb_256x256.png")"" alt="Ícone do Banco do Brasil">
-          </div>
-          <div>
-            <h1>Autoatendimento</h1>
-          </div>
-          <div>
-            <button>Sair</button>
-          </div>
+  <div class="containerExtrato">
+    <div class="header">
+      <div class="headerTopBar">
+        <div>
+          <img src="@routes.Assets.versioned("images/icon_bb_256x256.png")"" alt="Ícone do Banco do Brasil">
         </div>
-
-        <div class="headerBottomBar">
-          <div>
-            <button>Voltar</button>
-          </div>
-          <div>
-            <h2>Extrato de Conta Corrente</h2>
-          </div>
+        <div>
+          <h1>Autoatendimento</h1>
         </div>
-
+        <div>
+          <button>Sair</button>
+        </div>
       </div>
 
-      <div class="containerTable">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Dia</th>
-              <th>Histórico</th>
-              <th>Valor</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td></td>
-              <td>Saldo Anterior</td>
-              <td class="blueColor">@extrato.getSaldoAnteriorFormatoBr()</td>
-            </tr>
-            @for(it <- extrato.getItens()){
-              <tr>
-                  <td>@it.getData()</td>
-                  <td>@it.getHistorico()</td>
-                  @if(it.getTipo() == "debito"){
-                    <td class="redColor">@it.getValorFormatBr()</td>
-                  }else{
-                    <td class="blueColor">@it.getValorFormatBr()</td>
-                  }
-              </tr>
-            }
-            <tr>
-                <td></td>
-                <td class="saldoFormat">Saldo</td>
-                <td class="blueColor">@extrato.getSaldoAtualFormatoBr()</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="headerBottomBar">
+        <div>
+          <button>Voltar</button>
+        </div>
+        <div>
+          <h2>Extrato de Conta Corrente</h2>
+        </div>
       </div>
     </div>
+
+    <div class="containerTable">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Dia</th>
+            <th>Histórico</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td>Saldo Anterior</td>
+            <td class="blueColor">@extrato.getSaldoAnteriorFormatoBr()</td>
+          </tr>
+          @for(it <- extrato.getItens()){ <tr>
+            <td>@it.getData()</td>
+            <td>@it.getHistorico()</td>
+            @if(it.getTipo() == "debito"){
+            <td class="redColor">@it.getValorFormatBr()</td>
+            }else{
+            <td class="blueColor">@it.getValorFormatBr()</td>
+            }
+            </tr>
+            }
+            <tr>
+              <td></td>
+              <td class="saldoFormat">Saldo</td>
+              <td class="blueColor">@extrato.getSaldoAtualFormatoBr()</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="containerFilmes">
+    <div>
+      <div class="selectGenero">
+        <select name="genero" id="selectGenero">
+          <option value="" disabled selected>Selecione o Gênero</option>
+          <option value="comedia">Comédia</option>
+          <option value="ficcao-cientifica">Ficcção Científica</option>
+          <option value="terror">Terror</option>
+        </select>
+      </div>
+      <table class="tableGenero">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Ano</th>
+            <th>País</th>
+            <th>Artistas</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for(f <- fshow){ <tr>
+            <td>@f.getNome()</td>
+            <td>@f.getAno()</td>
+            <td>@f.getPais()</td>
+            <td>@f.getArtistasStr()</td>
+            </tr>
+            }
+        </tbody>
+      </table>
+    </div>
+
+    <div>
+      <div class="selectArtista">
+        <select name="artista" id="selectArtista">
+          <option value="" disabled selected>Selecione o Artista</option>
+          @for(a <- artistas){
+            <option value="@a.getNome()">@a.getNome()</option>
+          }
+        </select>
+      </div>
+      <table class="tableGenero">
+        <thead>
+          <tr>
+            <th>Filme</th>
+            <th>Ano</th>
+            <th>Gênero</th>
+            <th>Papel</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for(f <- fshowA){ <tr>
+            <td>@f.getNome()</td>
+            <td>@f.getAno()</td>
+            <td>@f.getGenero().getNome()</td>
+            <td>01</td>
+            </tr>
+            }
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
 }

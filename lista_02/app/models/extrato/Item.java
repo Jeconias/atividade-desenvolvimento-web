@@ -1,4 +1,4 @@
-package models;
+package models.extrato;
 
 import java.text.DecimalFormat;
 
