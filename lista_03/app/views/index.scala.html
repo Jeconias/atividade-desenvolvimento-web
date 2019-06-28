@@ -1,0 +1,51 @@
+@(imgLink : String, hide : Boolean)
+
+@main("yUML") {
+  <div class="containerForm">
+    <form class="form" action="/yuml" method="POST">
+      <div>
+        <h1>Gerar UML</h1>
+      </div>
+      <div class="autorInput">
+        <input type="text" name="autor" required placeholder="Autor">
+      </div>
+      <div class="casosDeUsoTextarea">
+        <textarea name="casosDeUso" rows="10" placeholder="Insira os casos de uso separado por linhas" ></textarea>
+      </div>
+      <div class="coresSelect">
+        <select name="cor" required>
+          <option value="" disabled selected>Deseja utilizar cores nos casos de uso?</option>
+          <option value="true">Sim</option>
+          <option value="false">Não</option>
+        </select>
+      </div>
+      <div class="formatStyle">
+        <select name="format" required>
+          <option value="" disabled selected>Escolha o formato do diagrama</option>
+          <option value="scruffy">Scruffy</option>
+          <option value="boring">Boring</option>
+          <option value="plain">Plain</option>
+        </select>
+      </div>
+      <div class="extensaoSelect">
+        <select name="extensao" required>
+          <option value="" disabled selected>Selecione o formato do arquivo</option>
+          <option value=".png">.PNG</option>
+          <option value=".jpg">.JPG</option>
+          <option value=".svg">.SVG</option>
+          <option value=".pdf">.PDF</option>
+        </select>
+      </div>
+      <div class="buttonInput">
+        <input type="submit" value="Gerar">
+      </div>
+    </form>
+    <div class="containerImg">
+      @if(hide == true){
+        <h1>Visualize a imagem aqui</h1>
+      }else{
+        <img src="@imgLink" alt="Seu CDU gerado">
+      }
+    </div>
+  </div>
+}
